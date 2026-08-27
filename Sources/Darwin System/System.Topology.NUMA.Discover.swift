@@ -1,4 +1,4 @@
-public import System_Primitives
+public import System
 
 extension System.Topology.NUMA {
 

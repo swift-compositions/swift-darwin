@@ -31,30 +31,30 @@ let package = Package(
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-primitives/swift-memory-primitives.git",
+            url: "https://github.com/swift-molecules/swift-memory.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-primitives/swift-system-primitives.git",
+            url: "https://github.com/swift-molecules/swift-system.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-primitives/swift-random-primitives.git",
+            url: "https://github.com/swift-molecules/swift-random.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-primitives/swift-error-primitives.git",
+            url: "https://github.com/swift-molecules/swift-error.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-primitives/swift-path-primitives.git",
+            url: "https://github.com/swift-molecules/swift-path.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-primitives/swift-clock-primitives.git",
+            url: "https://github.com/swift-molecules/swift-clock.git",
             branch: "main"
         ),
-        .package(url: "https://github.com/swift-foundations/swift-posix.git", branch: "main"),
+        .package(url: "https://github.com/swift-compositions/swift-posix.git", branch: "main"),
         .package(url: "https://github.com/swift-iso/swift-iso-9945.git", branch: "main"),
     ],
     targets: [
@@ -63,12 +63,12 @@ let package = Package(
             dependencies: [
                 .product(name: "Darwin Kernel Standard", package: "swift-darwin-standard"),
                 .product(name: "Darwin Kernel Event Standard", package: "swift-darwin-standard"),
-                .product(name: "Clock Primitives", package: "swift-clock-primitives"),
-                .product(name: "Error Primitives", package: "swift-error-primitives"),
-                .product(name: "Memory Primitives", package: "swift-memory-primitives"),
-                .product(name: "Random Primitives", package: "swift-random-primitives"),
-                .product(name: "System Primitives", package: "swift-system-primitives"),
-                .product(name: "Path Primitives", package: "swift-path-primitives"),
+                .product(name: "Clock", package: "swift-clock"),
+                .product(name: "Error", package: "swift-error"),
+                .product(name: "Memory", package: "swift-memory"),
+                .product(name: "Random", package: "swift-random"),
+                .product(name: "System", package: "swift-system"),
+                .product(name: "Path", package: "swift-path"),
 
                 .product(name: "POSIX Kernel", package: "swift-posix"),
                 .product(name: "ISO 9945 Kernel", package: "swift-iso-9945"),
@@ -86,7 +86,7 @@ let package = Package(
         .target(
             name: "Darwin System",
             dependencies: [
-                .product(name: "System Primitives", package: "swift-system-primitives"),
+                .product(name: "System", package: "swift-system"),
                 .product(name: "Darwin Kernel Standard", package: "swift-darwin-standard"),
             ]
         ),
