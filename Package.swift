@@ -57,7 +57,6 @@ let package = Package(
         .package(url: "https://github.com/swift-compositions/swift-posix.git", branch: "main"),
         .package(url: "https://github.com/swift-iso/swift-iso-9945.git", branch: "main"),
         .package(url: "https://github.com/swift-atoms/swift-cardinal.git", branch: "main"),
-        .package(url: "https://github.com/swift-compositions/swift-test-application.git", branch: "main"),
     ],
     targets: [
         .target(
@@ -105,7 +104,6 @@ let package = Package(
             dependencies: [
                 "Darwin System",
                 .product(name: "System", package: "swift-system"),
-                .product(name: "Testing", package: "swift-test-application"),
                 .product(name: "ISO 9945 Kernel System", package: "swift-iso-9945"),
             ]
         ),
