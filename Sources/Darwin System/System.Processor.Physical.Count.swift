@@ -4,17 +4,20 @@ public import System
 
     internal import Darwin_Kernel_Standard
 
-    extension System.Processor.Physical {
+    extension System {
 
-        public static var count: System.Processor.Count {
+        public static var physicalProcessorCount: Int {
             let value: Int32
             do throws(Darwin.Kernel.Sysctl.Error) {
                 value = try Darwin.Kernel.Sysctl.byName("hw.physicalcpu", as: Int32.self)
             } catch {
                 value = 0
             }
-            let clamped = value > 0 ? UInt(value) : 1
-            return System.Processor.Count(_unchecked: Cardinal(clamped))
+            guard value > 0 else { return 1 }
+            guard let count = Int(exactly: value) else {
+                preconditionFailure("Physical processor count is not representable as Int")
+            }
+            return count
         }
     }
 

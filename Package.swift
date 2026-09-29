@@ -31,31 +31,33 @@ let package = Package(
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-molecules/swift-memory.git",
+            url: "https://github.com/swift-atoms/swift-memory.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-molecules/swift-system.git",
+            url: "https://github.com/swift-atoms/swift-system.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-molecules/swift-random.git",
+            url: "https://github.com/swift-atoms/swift-random.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-molecules/swift-error.git",
+            url: "https://github.com/swift-atoms/swift-error.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-molecules/swift-path.git",
+            url: "https://github.com/swift-atoms/swift-path.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-molecules/swift-clock.git",
+            url: "https://github.com/swift-atoms/swift-clock.git",
             branch: "main"
         ),
         .package(url: "https://github.com/swift-compositions/swift-posix.git", branch: "main"),
         .package(url: "https://github.com/swift-iso/swift-iso-9945.git", branch: "main"),
+        .package(url: "https://github.com/swift-atoms/swift-cardinal.git", branch: "main"),
+        .package(url: "https://github.com/swift-compositions/swift-test-application.git", branch: "main"),
     ],
     targets: [
         .target(
@@ -88,6 +90,7 @@ let package = Package(
             dependencies: [
                 .product(name: "System", package: "swift-system"),
                 .product(name: "Darwin Kernel Standard", package: "swift-darwin-standard"),
+                .product(name: "Cardinal", package: "swift-cardinal"),
             ]
         ),
 
@@ -100,7 +103,10 @@ let package = Package(
         .testTarget(
             name: "Darwin System Tests",
             dependencies: [
-                "Darwin System"
+                "Darwin System",
+                .product(name: "System", package: "swift-system"),
+                .product(name: "Testing", package: "swift-test-application"),
+                .product(name: "ISO 9945 Kernel System", package: "swift-iso-9945"),
             ]
         ),
     ],
