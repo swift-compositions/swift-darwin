@@ -13,7 +13,7 @@ public typealias Kernel = POSIX.Kernel
 
 public typealias Darwin = Darwin_Kernel_Standard.Darwin
 
-public typealias Random = Random.Random
+public typealias Random = Random::Random
 
 #if os(macOS) || os(iOS) || os(tvOS) || os(watchOS) || os(visionOS)
     extension POSIX.Kernel {

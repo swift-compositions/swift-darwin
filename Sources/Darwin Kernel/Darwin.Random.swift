@@ -1,6 +1,6 @@
 extension Darwin {
 
-    public typealias Random = Random.Random
+    public typealias Random = Random::Random
 }
 
 #if os(macOS) || os(iOS) || os(tvOS) || os(watchOS) || os(visionOS)
