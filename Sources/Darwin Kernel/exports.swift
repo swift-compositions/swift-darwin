@@ -7,7 +7,7 @@
 @_exported public import POSIX_Kernel
 @_exported public import Path
 @_exported public import Random
-@_exported public import System
+@_exported public import System_Primitives
 
 public typealias Kernel = POSIX.Kernel
 

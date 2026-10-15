@@ -1,4 +1,4 @@
-public import System
+public import System_Primitives
 
 #if os(macOS) || os(iOS) || os(tvOS) || os(watchOS) || os(visionOS)
 

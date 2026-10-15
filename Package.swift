@@ -69,7 +69,7 @@ let package = Package(
                 .product(name: "Error", package: "swift-error"),
                 .product(name: "Memory", package: "swift-memory"),
                 .product(name: "Random", package: "swift-random"),
-                .product(name: "System", package: "swift-system"),
+                .product(name: "System Primitives", package: "swift-system"),
                 .product(name: "Path", package: "swift-path"),
 
                 .product(name: "POSIX Kernel", package: "swift-posix"),
@@ -88,7 +88,7 @@ let package = Package(
         .target(
             name: "Darwin System",
             dependencies: [
-                .product(name: "System", package: "swift-system"),
+                .product(name: "System Primitives", package: "swift-system"),
                 .product(name: "Darwin Kernel Standard", package: "swift-darwin-standard"),
                 .product(name: "Cardinal", package: "swift-cardinal"),
             ]
@@ -104,7 +104,7 @@ let package = Package(
             name: "Darwin System Tests",
             dependencies: [
                 "Darwin System",
-                .product(name: "System", package: "swift-system"),
+                .product(name: "System Primitives", package: "swift-system"),
                 .product(name: "ISO 9945 Kernel System", package: "swift-iso-9945"),
             ]
         ),
