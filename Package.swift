@@ -35,10 +35,6 @@ let package = Package(
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-atoms/swift-system.git",
-            branch: "main"
-        ),
-        .package(
             url: "https://github.com/swift-atoms/swift-random.git",
             branch: "main"
         ),
@@ -57,7 +53,6 @@ let package = Package(
         .package(url: "https://github.com/swift-compositions/swift-posix.git", branch: "main"),
         .package(url: "https://github.com/swift-iso/swift-iso-9945.git", branch: "main"),
         .package(url: "https://github.com/swift-atoms/swift-parser.git", branch: "main", traits: ["Map", "IteratorLeaves", "Product", "Skip", "Append", "Either", "Iterator"]),
-        .package(url: "https://github.com/swift-atoms/swift-cardinal.git", branch: "main"),
     ],
     targets: [
         .target(
@@ -69,7 +64,6 @@ let package = Package(
                 .product(name: "Error", package: "swift-error"),
                 .product(name: "Memory", package: "swift-memory"),
                 .product(name: "Random", package: "swift-random"),
-                .product(name: "System Primitives", package: "swift-system"),
                 .product(name: "Path", package: "swift-path"),
 
                 .product(name: "POSIX Kernel", package: "swift-posix"),
@@ -88,9 +82,7 @@ let package = Package(
         .target(
             name: "Darwin System",
             dependencies: [
-                .product(name: "System Primitives", package: "swift-system"),
-                .product(name: "Darwin Kernel Standard", package: "swift-darwin-standard"),
-                .product(name: "Cardinal", package: "swift-cardinal"),
+                .product(name: "Darwin Kernel System Standard", package: "swift-darwin-standard")
             ]
         ),
 
@@ -98,14 +90,6 @@ let package = Package(
             name: "Darwin Kernel Tests",
             dependencies: [
                 "Darwin Kernel"
-            ]
-        ),
-        .testTarget(
-            name: "Darwin System Tests",
-            dependencies: [
-                "Darwin System",
-                .product(name: "System Primitives", package: "swift-system"),
-                .product(name: "ISO 9945 Kernel System", package: "swift-iso-9945"),
             ]
         ),
     ],
