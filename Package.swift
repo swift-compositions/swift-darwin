@@ -89,7 +89,7 @@ let package = Package(
         .testTarget(
             name: "Darwin Kernel Tests",
             dependencies: [
-                "Darwin Kernel"
+                .target(name: "Darwin Kernel")
             ]
         ),
     ],
