@@ -10,7 +10,7 @@
 
 public typealias Kernel = POSIX.Kernel
 
-public typealias Darwin = Darwin_Kernel_Standard.Darwin
+public typealias Darwin = Darwin_Kernel_Standard::Darwin
 
 public typealias Random = Random::Random
 

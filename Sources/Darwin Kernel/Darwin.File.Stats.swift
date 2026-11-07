@@ -8,7 +8,7 @@
         public static func get(
             descriptor: borrowing ISO_9945.Kernel.Descriptor
         ) throws(Error) -> Self {
-            try Darwin_Kernel_Standard.Darwin.File.Stats.get(descriptor)
+            try Darwin_Kernel_Standard::Darwin.File.Stats.get(descriptor)
         }
     }
 
