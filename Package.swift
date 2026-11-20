@@ -25,10 +25,14 @@ let package = Package(
             targets: ["Darwin System"]
         ),
     ],
+    traits: [
+        .trait(name: "Loader", description: "Dynamic library loader (dyld/dlopen)")
+    ],
     dependencies: [
         .package(
             url: "https://github.com/swift-standards/swift-darwin-standard.git",
-            branch: "main"
+            branch: "main",
+            traits: [.trait(name: "Loader", condition: .when(traits: ["Loader"]))]
         ),
         .package(
             url: "https://github.com/swift-atoms/swift-memory.git",
@@ -50,9 +54,12 @@ let package = Package(
             url: "https://github.com/swift-atoms/swift-clock.git",
             branch: "main"
         ),
-        .package(url: "https://github.com/swift-compositions/swift-posix.git", branch: "main"),
+        .package(
+            url: "https://github.com/swift-compositions/swift-posix.git",
+            branch: "main",
+            traits: [.trait(name: "Loader", condition: .when(traits: ["Loader"]))]
+        ),
         .package(url: "https://github.com/swift-iso/swift-iso-9945.git", branch: "main"),
-        .package(url: "https://github.com/swift-atoms/swift-parser.git", branch: "main", traits: ["Map", "IteratorLeaves", "Product", "Skip", "Append", "Either", "Iterator"]),
     ],
     targets: [
         .target(

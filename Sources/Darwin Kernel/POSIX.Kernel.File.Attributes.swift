@@ -5,6 +5,6 @@ public import POSIX_Kernel_File
 
     extension POSIX.Kernel.File.Attributes {
 
-        public typealias Extended = ISO_9945.Kernel.File.Attributes.Extended
+        public typealias Extended = Darwin.Kernel.File.Attributes.Extended
     }
 #endif
