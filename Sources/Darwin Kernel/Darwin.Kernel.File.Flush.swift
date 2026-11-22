@@ -2,11 +2,11 @@ public import ISO_9945_Kernel_File
 
 #if os(macOS) || os(iOS) || os(tvOS) || os(watchOS) || os(visionOS)
 
-    extension ISO_9945.Kernel.File.Flush {
+    extension ISO.`9945`.Kernel.File.Flush {
 
         @inlinable
         public static func data(
-            _ descriptor: borrowing ISO_9945.Kernel.Descriptor
+            _ descriptor: borrowing ISO.`9945`.Kernel.Descriptor
         ) throws(Self.Error) {
             while true {
                 do throws(Self.Error) {
@@ -19,11 +19,11 @@ public import ISO_9945_Kernel_File
         }
     }
 
-    extension ISO_9945.Kernel.File.Flush {
+    extension ISO.`9945`.Kernel.File.Flush {
 
         @inlinable
         public static func full(
-            _ descriptor: borrowing ISO_9945.Kernel.Descriptor
+            _ descriptor: borrowing ISO.`9945`.Kernel.Descriptor
         ) throws(Self.Error) {
             while true {
                 do throws(Self.Error) {
@@ -36,11 +36,11 @@ public import ISO_9945_Kernel_File
         }
     }
 
-    extension ISO_9945.Kernel.File.Flush {
+    extension ISO.`9945`.Kernel.File.Flush {
 
         @inlinable
         public static func barrier(
-            _ descriptor: borrowing ISO_9945.Kernel.Descriptor
+            _ descriptor: borrowing ISO.`9945`.Kernel.Descriptor
         ) throws(Self.Error) {
             while true {
                 do throws(Self.Error) {

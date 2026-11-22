@@ -4,6 +4,6 @@ Use this package when you write code for Apple platforms against the kernel and 
 
 ## Laws
 
-- `ISO_9945.Kernel.File.Flush.full(_:)` does a full fsync. `ISO_9945.Kernel.File.Flush.data(_:)` does the same barrier fsync as `ISO_9945.Kernel.File.Flush.barrier(_:)`. Neither does a full fsync.
+- `` ISO.`9945`.Kernel.File.Flush.full(_:) `` does a full fsync. `` ISO.`9945`.Kernel.File.Flush.data(_:) `` does the same barrier fsync as `` ISO.`9945`.Kernel.File.Flush.barrier(_:) ``. Neither does a full fsync.
 - All three flushes retry by themselves when the call is interrupted by a signal, so an interruption never reaches the caller.
 - `Random.fill(_:)` fills the buffer from `arc4random`. An empty buffer is allowed and does nothing.

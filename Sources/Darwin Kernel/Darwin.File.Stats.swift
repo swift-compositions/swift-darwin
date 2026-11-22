@@ -6,7 +6,7 @@
     extension Darwin.File.Stats {
 
         public static func get(
-            descriptor: borrowing ISO_9945.Kernel.Descriptor
+            descriptor: borrowing ISO.`9945`.Kernel.Descriptor
         ) throws(Error) -> Self {
             try Darwin_Kernel_Standard::Darwin.File.Stats.get(descriptor)
         }
